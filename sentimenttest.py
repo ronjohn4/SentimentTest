@@ -2,9 +2,9 @@
 
 Sentiment libraries return varying results mainly because they are created with various purposes.
 This framework runs through a list of sample sentences and displays the sentiment results for human
-comparison.  There are 3 libraries compared in this iteration.
+comparison.  There are 2 libraries compared in this iteration.
 """
-from vaderSentiment.vaderSentiment import sentiment as vaderSentiment
+
 import pysentiment as ps
 import afinn
 
@@ -29,7 +29,6 @@ sentences = [
 "Today kinda sux! But I'll get by, lol"
 "Most automated sentiment analysis tools are shit.",
 "VADER sentiment analysis is the shit.",
-"Sentiment analysis has never been good.",
 "Sentiment analysis with VADER has never been this good.",
 "Warren Beatty has never been so entertaining.",
 "I won't say that the movie is astounding and I wouldn't claim that \
@@ -66,10 +65,6 @@ afinn = afinn.Afinn()
 
 for sentence in sentences:
     print(sentence)
-
-    # vaderSentiment
-    vs = vaderSentiment(sentence)
-    print("  {0:16}  pos:{1:5.3f}  neg:{2:5.3f}".format('vaderSentiment', s['pos'], vs['neg']))
 
     # pysentiment
     tokens = hiv4.tokenize(sentence)
